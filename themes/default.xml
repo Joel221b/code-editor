@@ -1,0 +1,31 @@
+<style-scheme name="default" id="default" version="1.0">
+	<author>Marcos Vinicius</author>
+	<description>Color Scheme</description>
+		<color name="background"	value="#22262f" />
+		<color name="foreground" 	value="#dee2f7" />
+		<color name="cursor"     	value="#dee2f7" />
+		<color name="string" 		value="#a3eea0" />
+		<color name="builtin"		value="#fdce68" />
+		<color name="number" 		value="#eddc96"	/>
+
+		<!--Extra Colors-->
+		<color name="color1" 		value="#63677e" />
+		<color name="color2" 		value="#e4f9ef" />
+		<color name="color3" 		value="#09c372" />
+		<color name="color4" 		value="#e19ef5" /> <!--Statement Color-->
+
+		<style name="text" 			foreground="foreground" background="background" />
+		<style name="line-numbers" 	foreground="color1" 	background="background" />
+		<style name="current-line" 	background="foreground" 						/>
+		<style name="selection" 	foreground="color2" 	background="color3" 	/>
+
+		<!--comments-->
+		<style name="def:comment" 	foreground="color1"		/>
+		<style name="def:shebang"	bold="true" 			/>
+
+		<style name="def:string" 	foreground="string" 				/>
+		<style name="def:number" 	foreground="number" bold="true"		/>
+		<style name="def:constant" 	foreground="string" 				/>
+		<style name="def:statement" foreground="color4" 				/>
+		<style name="def:boolean" 	foreground="color4" bold="true" 	/>
+</style-scheme>
