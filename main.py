@@ -10,11 +10,11 @@ from settings import config
 class App:
 	def __init__(self):
 		self.window = Gtk.Window(title = config["title"])
-		self.window.set_default_size(400, 400)
+		self.window.set_default_size(700, 700)
 		self.window.connect("destroy", Gtk.main_quit)
 
 		self.header_bar = Gtk.HeaderBar(title = config["title"])
-		self.header_bar.set_show_close_button(True)
+		self.header_bar.set_show_close_button(config["set_show_close_button"])
 		self.header_bar.set_subtitle("App.py")
 
 		self.view = GtkSource.View()
@@ -22,11 +22,15 @@ class App:
 		self.view.set_show_line_numbers(config["show_line_numbers"])
 		self.view.set_show_line_marks(config["show_line_marks"])
 
+		self.scrolled = Gtk.ScrolledWindow()
+		self.scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+		self.scrolled.add(self.view)
+
 	def loadHeaderBar(self):
 		self.window.set_titlebar(self.header_bar)
 
 	def loadViews(self):
-		self.window.add(self.view)
+		self.window.add(self.scrolled)
 
 	def run(self):
 		self.window.show_all()
@@ -35,8 +39,5 @@ class App:
 
 if __name__ == "__main__":
 	app = App()
-
-	app.loadHeaderBar()
 	app.loadViews()
-
 	app.run()
